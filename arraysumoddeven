@@ -1,0 +1,99 @@
+package revaturedaythree;
+
+//by Haley Moses
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+
+ public class playingwitharrays
+ {
+
+ public static void main (String[]args)
+    {
+        {
+
+            //find all even numbers and put in new array
+            // and all odd numbers and put in new array
+        	//return the minimum and maximum values elements of the array 
+        	//check to see if any of the array elements are palindromes or not
+
+        	//scanner input to generate the array number of elements and element values
+        	
+        int n;    int i = 0;
+        
+       
+
+        @SuppressWarnings("resource")
+		Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter no. of elements you want in array: ");
+        n = s.nextInt();
+        
+        	
+        	//n is the numerical element value, i is the element position and the array is defined as a[i]
+        
+        int[] a = new int[n];
+
+        System.out.println("Enter all the elements: ");
+
+        for (i = 0; i < n; i++) 
+        {
+
+            a[i] = s.nextInt();
+
+        }
+        int arrsize=a.length;
+        
+        
+      //going to sort the array in ascending order and call the positions of the first and last as my min and max values
+        {
+        	
+        Arrays.sort(a);
+        
+        //checking for if there is less than 2 inputs
+        if (arrsize < 2)
+        {
+        	System.out.println("Invalid Input ");
+        	return;
+        }
+        else 
+        {
+        	
+       int first = a[0];  
+        //maximum array value at the first index of the array
+       int second = a[(arrsize-1)]; 
+        //minimum array value at the last index of the array
+        
+        
+        System.out.println("The minimum value of the array is: "+first);
+		System.out.println("The maximum value of the array is "+second);
+        
+        }
+		
+         int sumeven = 0;   int sumodd = 0;
+
+				
+		for (i=0; i<n; i++)
+		{
+				if( a[i] % 2 == 0 )
+					{
+						sumeven = sumeven +a[i];
+				 		
+					}
+					
+					else 	
+				 	
+					 sumodd = sumodd +a[i];
+				 
+					}
+		System.out.println("Sum of the odd numbers array elements is: "+sumodd);
+		System.out.println("Sum of the even numbers array elements is: "+sumeven);
+		
+		
+		}		 	     
+   
+        }  
+
+    }
+}
