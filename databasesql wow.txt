@@ -1,0 +1,86 @@
+#
+WarcraftClasses 
+---
+ClassID int PK FK >- Role.ClassID
+ClassName string
+-------
+
+#
+Classes
+------
+ClassID0 "Hunter" FK >- WarcraftClasses.ClassID
+ClassID1 "Monk" FK >- WarcraftClasses.ClassID
+ClassID2 "Rogue" FK >- WarcraftClasses.ClassID
+ClassID3 "Demon Hunter" FK >- WarcraftClasses.ClassID
+ClassID4 "Druid" FK >- WarcraftClasses.ClassID
+ClassID5 "Warrior" FK >- WarcraftClasses.ClassID
+ClassID6 "Warlock" FK >- WarcraftClasses.ClassID
+ClassID7 "Mage" FK >- WarcraftClasses.ClassID
+ClassID8 "Priest" FK >- WarcraftClasses.ClassID
+ClassID9 "Death Knight" FK >- WarcraftClasses.ClassID
+----
+
+
+#
+Specialization
+-------
+SpecID int PK
+ClassID int FK
+RoleID int FK >- Role.RoleID
+ClassName string
+SpecName string
+---
+
+#
+Specializations
+-------
+SpecID0 "Survival Hunter" FK >- Classes.ClassID0
+SpecID1 "Marksmanship Hunter" FK >- Classes.ClassID0
+SpecID2 "Beastmastery Hunter" FK >- Classes.ClassID0
+SpecID3 "Brewmaster Monk" FK >- Classes.ClassID1
+SpecID4 "Windwalker Monk" FK >- Classes.ClassID1
+SpecID5 "Mistweaver Monk" FK >- Classes.ClassID1
+SpecID6 "Subtlety Rogue" FK >- Classes.ClassID2
+SpecID7 "Assassination Rogue" FK >- Classes.ClassID2
+SpecID8 "Combat Rogue" FK >- Classes.ClassID2
+SpecID9 "Havoc Demon Hunter" FK >- Classes.ClassID3
+SpecID10 "Vengence Demon Hunter" FK >- Classes.ClassID3
+SpecID11 "Feral Druid" FK >- Classes.ClassID4
+SpecID12 "Balance Druid" FK >- Classes.ClassID4
+SpecID13 "Restoration Druid" FK >- Classes.ClassID4
+SpecID14 "Guardian Druid" FK >- Classes.ClassID4
+SpecID15 "Arms Warrior" FK >- Classes.ClassID5
+SpecID16 "Fury Warrior" FK >- Classes.ClassID5
+SpecID17 "Protection Warrior" FK >- Classes.ClassID5
+SpecID18 "Demonology Warlock" FK >- Classes.ClassID6
+SpecID19 "Destruction Warlock" FK >- Classes.ClassID6
+SpecID20 "Affliction Warlock" FK >- Classes.ClassID6
+SpecID21 "Fire Mage" FK >- Classes.ClassID7
+SpecID22 "Frost Mage" FK >- Classes.ClassID7
+SpecID23 "Arcane Mage" FK >- Classes.ClassID7
+SpecID24 "Holy Priest" FK >- Classes.ClassID8
+SpecID25 "Discipline Priest" FK >- Classes.ClassID8
+SpecID26 "Shadow Priest" FK >- Classes.ClassID8
+SpecID27 "Frost Death Knight" FK >- Classes.ClassID9
+SpecID28 "Unholy Death Knight" FK >- Classes.ClassID9
+SpecID29 "Blood Death Knight" FK >- Classes.ClassID9
+
+
+#
+Role
+-----
+RoleID int PK
+SpecID int FK >- Specialization.SpecID
+ClassID int FK >- Specialization.ClassID
+Role string
+SpecName string
+ClassName string
+------
+
+#
+RoleID
+---
+RoleID0 "Tank" FK >-   Role.RoleID
+RoleID1 "Ranged DPS" FK >- Role.RoleID
+RoleID2 "Healer" FK >- Role.RoleID
+RoleID3 "Melee DPS" FK >- Role.RoleID
